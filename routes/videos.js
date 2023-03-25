@@ -32,18 +32,18 @@ router.post("/", (req, res) => {
         id: uuid(),
         title: req.body.title,
         channel: "Mohan Murage",
-        image: "../public/Upload-video-preview.jpg",
+        image: "../Upload-video-preview.jpg",
         description: req.body.description,
         views:0,
         likes: 0,
         duration: "5:17",
-        video: "../public/BrainStation-Sample-Video.mp4",
+        video: "../BrainStation-Sample-Video.mp4",
         timestamp: Date.now(),
         comments: []
     }
     const videos = videoDetails();
     videos.push(newVideo);
-    fs.writeFileSync("./data/video-details.json", JSON.stringify(videos));
+    fs.writeFileSync("./data/videos.json", JSON.stringify(videos));
     res.status(200).json(newVideo);
 })
 
